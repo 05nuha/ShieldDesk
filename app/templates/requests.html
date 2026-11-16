@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Service requests</h2>
+{% if error %}<p class="err">{{ error }}</p>{% endif %}
+<form method="post">
+<label>Category</label><select name="category"><option>IT</option><option>Finance</option><option>Housing</option><option>Registration</option><option>Library</option></select>
+<label>Details</label><textarea name="details"></textarea>
+<button>Submit request</button></form>
+<table border="1" cellpadding="4"><tr><th>#</th><th>User</th><th>Category</th><th>Details</th><th>Status</th></tr>
+{% for r in rows %}<tr><td>{{ r['id'] }}</td><td>{{ r['username'] }}</td><td>{{ r['category'] }}</td><td>{{ r['details']|safe }}</td><td>{{ r['status'] }}</td></tr>{% endfor %}
+</table>
+{% endblock %}

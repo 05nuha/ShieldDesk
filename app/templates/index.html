@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user %}<p>Logged in as {{ user }} ({{ role }})</p>{% else %}<p>Please log in.</p>{% endif %}
+<form action="/search" method="get"><label>Search requests by category</label><input name="q"><button>Search</button></form>
+{% endblock %}
