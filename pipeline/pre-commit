@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Git pre-commit hook: runs the fast gates (SAST + secrets) before every commit.
+# Install with:  cp pipeline/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+echo "pre-commit: running SAST + secret scan..."
+RUN_DAST=0 ./pipeline/ci.sh || { echo "pre-commit: COMMIT REFUSED (fix the findings above)"; exit 1; }

@@ -1,0 +1,16 @@
+title = "ShieldDesk gitleaks config"
+
+[extend]
+useDefault = true          # keep all built-in rules (AWS keys, tokens, private keys...)
+
+[[rules]]
+id = "flask-secret-key"
+description = "Hard-coded Flask SECRET_KEY"
+regex = '''(?i)SECRET_KEY['"]?\]?\s*=\s*['"][^'"]{6,}['"]'''
+keywords = ["secret_key"]
+
+[[rules]]
+id = "hardcoded-password-assignment"
+description = "Hard-coded password string"
+regex = '''(?i)(password|passwd|pwd)\s*=\s*['"][^'"]{6,}['"]'''
+keywords = ["password", "passwd", "pwd"]
