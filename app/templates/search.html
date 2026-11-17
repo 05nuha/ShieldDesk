@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+{% if error %}<p class="err">{{ error }}</p>{% endif %}
+<h2>Results for: {{ q }}</h2>
+<ul>{% for r in rows %}<li>#{{ r['id'] }} {{ r['category'] }} ({{ r['status'] }})</li>{% endfor %}</ul>
+{% endblock %}

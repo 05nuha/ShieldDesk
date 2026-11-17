@@ -7,6 +7,6 @@
 <label>Details</label><textarea name="details"></textarea>
 <button>Submit request</button></form>
 <table border="1" cellpadding="4"><tr><th>#</th><th>User</th><th>Category</th><th>Details</th><th>Status</th></tr>
-{% for r in rows %}<tr><td>{{ r['id'] }}</td><td>{{ r['username'] }}</td><td>{{ r['category'] }}</td><td>{{ r['details']|safe }}</td><td>{{ r['status'] }}</td></tr>{% endfor %}
+{% for r in rows %}<tr><td>{{ r['id'] }}</td><td>{{ r['username'] }}</td><td>{{ r['category'] }}</td><td>{{ r["details"] }}</td><td>{{ r['status'] }}</td></tr>{% endfor %}
 </table>
 {% endblock %}

@@ -1,0 +1,7 @@
+[VULNERABLE] SQL injection login bypass: final URL http://127.0.0.1:5000/requests
+[VULNERABLE] Reflected XSS in /search: payload returned raw
+[VULNERABLE] User enumeration: messages differ
+[VULNERABLE] No account lockout: login still possible after 6 failures
+[VULNERABLE] Error information leak: HTTP 500
+
+Summary: 0/5 tests passed (secure), 5 vulnerable
